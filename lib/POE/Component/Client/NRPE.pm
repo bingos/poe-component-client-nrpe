@@ -10,7 +10,7 @@ use Socket;
 use integer;
 use vars qw($VERSION);
 
-$VERSION = '0.12';
+$VERSION = '0.14';
 
 sub check_nrpe {
   my $package = shift;

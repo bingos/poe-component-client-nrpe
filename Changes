@@ -1,6 +1,9 @@
 POE::Component::Client::NRPE
 ============================
 
+0.14	Mon Apr  6 21:45:36 BST 2009
+	- Bump the required versions of some deps
+
 0.12	Wed Feb  4 08:54:15 GMT 2009
 	- Removed our hackery version of SSLify
 	- Require 0.14 of SSLify and use the new
