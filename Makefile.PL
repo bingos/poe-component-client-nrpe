@@ -13,5 +13,5 @@ requires 'Socket' => 0;
 requires 'POE'    => 1.004;
 requires 'Net::SSLeay' => 1.30;
 requires 'POE::Component::SSLify' => 0.15;
-auto_set_repository;
+eval "auto_set_repository";
 WriteAll();

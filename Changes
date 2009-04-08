@@ -1,6 +1,9 @@
 POE::Component::Client::NRPE
 ============================
 
+0.16	Wed Apr  8 12:26:56 BST 2009
+	- Make auto_set_repository() only run at author-time
+
 0.14	Mon Apr  6 21:45:36 BST 2009
 	- Bump the required versions of some deps
 
