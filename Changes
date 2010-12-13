@@ -1,6 +1,9 @@
 POE::Component::Client::NRPE
 ============================
 
+0.18  Mon Dec 13 16:06:37 GMT 2010
+  - Added 'args' option
+
 0.16	Wed Apr  8 12:26:56 BST 2009
 	- Make auto_set_repository() only run at author-time
 

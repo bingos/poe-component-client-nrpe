@@ -10,7 +10,7 @@ use Socket;
 use integer;
 use vars qw($VERSION);
 
-$VERSION = '0.16';
+$VERSION = '0.18';
 
 sub check_nrpe {
   my $package = shift;
@@ -22,6 +22,7 @@ sub check_nrpe {
 	unless $params{event};
   $params{port} = 5666 unless defined $params{port};
   $params{command} = '_NRPE_CHECK' unless $params{command};
+  $params{command} = join( '!', $params{command}, $params{args} ) if defined $params{args};
   $params{version} = 2 unless $params{version} and $params{version} eq '1';
   $params{usessl} = 1 unless defined $params{usessl} and $params{usessl} eq '0';
   $params{timeout} = 10 unless defined $params{timeout} and $params{timeout} =~ /^\d+$/;
@@ -367,6 +368,7 @@ Takes a number of parameters:
   'version', the NRPE protocol version to use, default is 2;
   'usessl', set this to 0 to disable SSL support with NRPE Version 2, default is 1;
   'command', the command to run remotely, default is '_NRPE_CHECK';
+  'args', any arguments to be passed along with the 'command';
   'context', anything you like that'll fit in a scalar, a ref for instance;
   'timeout', number of seconds to wait for socket timeouts, default is 10;
   'unknown', set this to true to make the poco return socket timeouts as UNKNOWN instead of CRITICAL;
@@ -398,7 +400,7 @@ Copyright (C) 2006, 2007 STIC GmbH, http://www.stic-online.de
 
 =head1 LICENSE
 
-Copyright L<(c)> Chris Williams and STIC GmbH.
+Copyright E<copy> Chris Williams, Apocalypse, Rocco Caputo and STIC GmbH.
 
 This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
