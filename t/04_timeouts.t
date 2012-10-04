@@ -9,8 +9,8 @@ use Test::POE::Server::TCP;
 POE::Session->create(
   package_states => [
 	'main' => [qw(
-			_start 
-			_response 
+			_start
+			_response
 			nrped_client_input
 	)],
   ],
@@ -27,7 +27,7 @@ sub _start {
   );
   my $port = $heap->{nrped}->port();
 
-  my $check = POE::Component::Client::NRPE->check_nrpe( 
+  my $check = POE::Component::Client::NRPE->check_nrpe(
 	host  => '127.0.0.1',
 	port  => $port,
 	event => '_response',
